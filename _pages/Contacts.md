@@ -3,4 +3,5 @@ permalink: /contacts/
 title: "Contacts"
 ---
 
-Email: etubiodaudu [at] gmail [dot] com
+Email: <a href="mailto:etubiodaudu@gmail.com ">etubiodaudu [at] gmail [dot] com </a>
+
