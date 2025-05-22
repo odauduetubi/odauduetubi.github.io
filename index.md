@@ -6,5 +6,4 @@ layout: single
 author_profile: true
 ---
 
-
 My research interests are in the area of dynamical systems and ergodic theory.
