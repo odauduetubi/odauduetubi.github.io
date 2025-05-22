@@ -3,4 +3,4 @@ permalink: /contacts/
 title: "Contacts"
 ---
 
-Email:
+Email: etubiodaudu [at] gmail [dot] com
