@@ -1,1 +1,5 @@
+---
+permalink: /papers/
+title: "Papers"
+---
 
