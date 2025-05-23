@@ -1,8 +1,8 @@
 main:
   - title: "Contacts"
     url: /contacts/
-  - title: "Research articles"
-    url: /researcharticles/
+  - title: "Research"
+    url: /research/
   - title: "Portfolio"
     url: /portfolio/
   - title: "CV"
