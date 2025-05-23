@@ -81,12 +81,12 @@ author:
 
 footer:
   links:
-   #  - label: "Twitter"
-   #   icon: "fab fa-fw fa-twitter-square"
-   #   url: "https://x.com/odaudu_etubi"
-   # - label: "GitHub"
-    #  icon: "fab fa-fw fa-github"
-    #  url: "https://github.com/odauduetubi"
+     - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://x.com/odaudu_etubi"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/odauduetubi"
    # - label: "Instagram"
     #  icon: "fab fa-fw fa-instagram"
     #  url: "https://www.instagram.com/etubiodaudu/"
