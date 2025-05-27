@@ -5,7 +5,5 @@
 layout: single
 author_profile: true
 ---
-header:
-  image: sao.jpeg
   
 My research interests are in the area of dynamical systems and ergodic theory.
