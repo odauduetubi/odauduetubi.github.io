@@ -109,8 +109,6 @@ defaults:
       share: true
       related: true
   # _pages
-  header:
-  teaser: /assets/images/sao.jpeg
   - scope:
       path: "_pages"
       type: pages
