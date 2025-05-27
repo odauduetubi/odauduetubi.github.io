@@ -109,6 +109,8 @@ defaults:
       share: true
       related: true
   # _pages
+- header:
+  image: sao.jpeg
   - scope:
       path: "_pages"
       type: pages
