@@ -1,491 +1,176 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Odaudu Etubi — Trail Log</title>
-<meta name="description" content="A hiking photo journal — trails walked, elevation gained, moments kept.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;0,18..144,600;1,18..144,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg: #16211C;
-    --surface: #1E2C24;
-    --surface-2: #24352B;
-    --paper: #EFE7D8;
-    --gold: #E2A63B;
-    --gold-dim: #a3782f;
-    --sky: #7FA0AE;
-    --text: #EDE6D6;
-    --text-muted: #93A196;
-    --line: rgba(237,230,214,0.14);
-    --display: 'Big Shoulders Display', sans-serif;
-    --body: 'Literata', serif;
-    --mono: 'Space Mono', monospace;
-  }
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Odaudu Etubi - Galleries</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Small additions scoped to this page only — thumbnail strips under each hike */
+			.thumbs{ display:flex; flex-wrap:wrap; gap:8px; margin: 0 0 1.5em; }
+			.thumbs a{ display:block; width: calc(25% - 6px); }
+			.thumbs img{ width:100%; height:150px; object-fit:cover; border-radius:2px; }
+			.thumbs .placeholder{
+				width:100%; height:150px; border-radius:2px;
+				border:1px dashed rgba(128,128,128,0.4);
+				display:flex; align-items:center; justify-content:center;
+				font-size:0.7em; text-align:center; padding:6px; word-break:break-all;
+				opacity:0.7;
+			}
+			@media (max-width: 736px){ .thumbs a{ width: calc(50% - 4px); } }
+		</style>
+	</head>
+	<body class="is-preload">
 
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
-  body{
-    margin:0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--body);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  img{ max-width:100%; display:block; }
-  a{ color: inherit; }
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-  /* ---------- topo texture (used behind hero & footer) ---------- */
-  .topo{
-    position:absolute; inset:0;
-    background-image:
-      repeating-radial-gradient(circle at 20% 30%, transparent 0, transparent 26px, rgba(237,230,214,0.05) 27px, transparent 28px, transparent 60px),
-      repeating-radial-gradient(circle at 80% 70%, transparent 0, transparent 34px, rgba(237,230,214,0.04) 35px, transparent 36px, transparent 74px);
-    pointer-events:none;
-  }
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Brushstrokes</a>
+					</header>
 
-  /* ---------- top bar ---------- */
-  .topbar{
-    position: sticky; top:0; z-index: 50;
-    display:flex; align-items:center; justify-content:space-between;
-    padding: 16px clamp(20px, 5vw, 56px);
-    background: rgba(22,33,28,0.85);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-  }
-  .topbar .mark{
-    font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em;
-    color: var(--gold); text-transform: uppercase; text-decoration:none;
-  }
-  .topbar .stats{
-    font-family: var(--mono); font-size: 11px; color: var(--text-muted);
-    letter-spacing: 0.05em; display:flex; gap:18px;
-  }
-  .topbar .stats span b{ color: var(--text); }
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Portfolio</a></li>
+							<li><a href="elements.html">CV</a></li>
+							<li><a href="notes.html">Notes</a></li>
+							<li class="active"><a href="gallery.html">Galleries</a></li>
+						</ul>
+						<!--<ul class="icons">
+							<li><a href="https://x.com/odaudu_etubi" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/OdauduEtubi" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.instagram.com/etubiodaudu/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://www.linkedin.com/in/odauduetubi/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/odauduetubi" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>-->
+					</nav>
 
-  /* ---------- hero ---------- */
-  .hero{
-    position: relative;
-    min-height: 88vh;
-    display:flex; flex-direction:column; justify-content:flex-end;
-    padding: 40px clamp(20px, 5vw, 56px) 64px;
-    overflow:hidden;
-    background: linear-gradient(180deg, #10190F 0%, #16211C 55%, #1a2721 100%);
-  }
-  .hero-photo{
-    position:absolute; inset:0; width:100%; height:100%;
-    object-fit:cover; opacity:0.55;
-  }
-  .hero-photo.is-missing{ display:none; }
-  .hero::after{
-    content:"";
-    position:absolute; inset:0;
-    background: linear-gradient(180deg, rgba(16,25,15,0.15) 0%, rgba(16,25,15,0.55) 55%, rgba(16,25,15,0.95) 100%);
-  }
-  .hero-inner{ position:relative; z-index:2; max-width: 760px; }
-  .eyebrow{
-    font-family: var(--mono); font-size: 12px; letter-spacing: 0.28em;
-    color: var(--gold); text-transform: uppercase; margin: 0 0 18px;
-  }
-  .hero h1{
-    font-family: var(--display); font-weight: 800;
-    font-size: clamp(48px, 9vw, 108px);
-    line-height: 0.92; letter-spacing: -0.01em;
-    margin: 0 0 22px; text-transform: uppercase;
-  }
-  .hero p{
-    font-size: clamp(16px, 2vw, 19px); color: var(--text-muted);
-    max-width: 46ch; margin: 0 0 30px;
-  }
-  .scroll-cue{
-    font-family: var(--mono); font-size: 11px; color: var(--sky);
-    letter-spacing: 0.15em; text-transform: uppercase;
-    display:flex; align-items:center; gap:10px;
-  }
-  .scroll-cue .stem{
-    width:1px; height:34px; background: linear-gradient(var(--sky), transparent);
-  }
+				<!-- Main -->
+					<div id="main">
 
-  /* ---------- trail index (signature element) ---------- */
-  .trail-section{
-    position: relative;
-    padding: 90px clamp(20px, 5vw, 56px) 60px;
-    max-width: 1080px; margin: 0 auto;
-  }
-  .trail-section h2{
-    font-family: var(--display); font-weight:700; text-transform:uppercase;
-    font-size: clamp(26px, 3.4vw, 38px); letter-spacing: 0.01em;
-    margin: 0 0 10px; color: var(--paper);
-  }
-  .trail-section .sub{
-    color: var(--text-muted); font-size:15px; margin: 0 0 56px; max-width: 56ch;
-  }
+						<header>
+							<h2>Hike Galleries</h2>
+							<p>A running record of trails I've walked.</p>
+							<p>Below are photos from each hike, most recent first.</p>
+						</header>
 
-  .trail{
-    position: relative;
-    padding-left: 46px;
-  }
-  .trail::before{
-    /* the base, un-walked trail */
-    content:"";
-    position:absolute; left:11px; top:6px; bottom:6px; width:2px;
-    background: repeating-linear-gradient(var(--line), var(--line) 6px, transparent 6px, transparent 12px);
-  }
-  .trail-fill{
-    position:absolute; left:11px; top:6px; width:2px; height:0%;
-    background: linear-gradient(var(--gold), var(--sky));
-    transition: height 0.15s linear;
-  }
+						<!--
+							HOW TO ADD YOUR OWN PHOTOS
+							============================
+							1. Create a folder named "images/hikes" in your repo (next to this file)
+							   and drop your photo files in there, e.g. images/hikes/gannett-1.jpg
+							2. Copy one <article> block below per hike, and edit:
+							   - the <h2> title and date
+							   - the lead <img src="..."> path
+							   - the paragraph text
+							   - each <img> in the .thumbs row
+							3. Commit and push. No build step needed — GitHub Pages serves
+							   the file directly once it exists at that path.
+							Any image path that doesn't exist yet will show a dashed
+							placeholder box instead of a broken image icon.
+						-->
 
-  .waypoint{ position: relative; margin-bottom: 88px; }
-  .waypoint:last-child{ margin-bottom: 0; }
-  .blaze{
-    position:absolute; left:-46px; top:4px;
-    width: 24px; height: 15px;
-    background: var(--surface-2);
-    border: 1.5px solid var(--line);
-    border-radius: 2px;
-    transition: background 0.3s, border-color 0.3s, transform 0.3s;
-  }
-  .waypoint.is-active .blaze{
-    background: var(--gold);
-    border-color: var(--gold);
-    transform: scale(1.08);
-    box-shadow: 0 0 0 4px rgba(226,166,59,0.15);
-  }
+						<section class="posts">
 
-  .plate{
-    display:flex; flex-wrap:wrap; align-items:baseline; gap: 10px 22px;
-    margin-bottom: 20px;
-  }
-  .plate h3{
-    font-family: var(--display); font-weight:700; text-transform:uppercase;
-    font-size: clamp(24px, 3vw, 32px); margin:0; color: var(--paper);
-    letter-spacing: 0.01em;
-  }
-  .plate .meta{
-    font-family: var(--mono); font-size: 11.5px; color: var(--sky);
-    letter-spacing: 0.06em; display:flex; gap:16px; flex-wrap: wrap;
-  }
-  .plate .meta b{ color: var(--text); font-weight:700; }
-  .note{
-    color: var(--text-muted); font-size: 15px; margin: 0 0 22px; max-width: 62ch;
-  }
+							<article>
+								<header>
+									<h2><a href="#">Gannett Peak<br />
+									<small>June 2026 &middot; 22 mi &middot; +8,700 ft</small></a></h2>
+								</header>
+								<a href="images/hikes/gannett-1.jpg" class="image fit">
+									<img src="images/hikes/gannett-1.jpg" alt=""
+										onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot; style=&quot;height:220px;border:1px dashed rgba(128,128,128,.4);display:flex;align-items:center;justify-content:center;font-size:.75em;opacity:.7;&quot;>images/hikes/gannett-1.jpg</div>'" />
+								</a>
+								<p>Three days in the Wind River Range, ending with glacier travel on the final push to the summit.</p>
+								<div class="thumbs">
+									<a href="images/hikes/gannett-2.jpg"><img src="images/hikes/gannett-2.jpg" alt="" onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot;>images/hikes/gannett-2.jpg</div>'" /></a>
+									<a href="images/hikes/gannett-3.jpg"><img src="images/hikes/gannett-3.jpg" alt="" onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot;>images/hikes/gannett-3.jpg</div>'" /></a>
+									<a href="images/hikes/gannett-4.jpg"><img src="images/hikes/gannett-4.jpg" alt="" onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot;>images/hikes/gannett-4.jpg</div>'" /></a>
+									<a href="images/hikes/gannett-5.jpg"><img src="images/hikes/gannett-5.jpg" alt="" onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot;>images/hikes/gannett-5.jpg</div>'" /></a>
+								</div>
+							</article>
 
-  .photo-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 10px;
-  }
-  .photo-grid a{
-    display:block; position:relative;
-    aspect-ratio: 4/3;
-    overflow:hidden;
-    border-radius: 3px;
-    background: var(--surface);
-    border: 1px solid var(--line);
-  }
-  .photo-grid img{
-    width:100%; height:100%; object-fit:cover;
-    transition: transform 0.5s ease;
-  }
-  .photo-grid a:hover img{ transform: scale(1.05); }
+							<article>
+								<header>
+									<h2><a href="#">Angels Landing<br />
+									<small>March 2026 &middot; 5.4 mi &middot; +1,600 ft</small></a></h2>
+								</header>
+								<a href="images/hikes/angels-1.jpg" class="image fit">
+									<img src="images/hikes/angels-1.jpg" alt=""
+										onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot; style=&quot;height:220px;border:1px dashed rgba(128,128,128,.4);display:flex;align-items:center;justify-content:center;font-size:.75em;opacity:.7;&quot;>images/hikes/angels-1.jpg</div>'" />
+								</a>
+								<p>Chains, sandstone, and a drop-off I tried not to look at for too long.</p>
+								<div class="thumbs">
+									<a href="images/hikes/angels-2.jpg"><img src="images/hikes/angels-2.jpg" alt="" onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot;>images/hikes/angels-2.jpg</div>'" /></a>
+									<a href="images/hikes/angels-3.jpg"><img src="images/hikes/angels-3.jpg" alt="" onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot;>images/hikes/angels-3.jpg</div>'" /></a>
+								</div>
+							</article>
 
-  .photo-grid .placeholder{
-    position:absolute; inset:0;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:8px; padding: 12px; text-align:center;
-    background:
-      repeating-linear-gradient(135deg, rgba(237,230,214,0.03) 0 2px, transparent 2px 14px),
-      var(--surface);
-  }
-  .photo-grid .placeholder .plus{
-    font-family: var(--mono); font-size: 20px; color: var(--gold-dim);
-  }
-  .photo-grid .placeholder .fname{
-    font-family: var(--mono); font-size: 10.5px; color: var(--text-muted);
-    word-break: break-all;
-  }
+							<article>
+								<header>
+									<h2><a href="#">Precipice Trail<br />
+									<small>October 2025 &middot; 3.2 mi &middot; +1,000 ft</small></a></h2>
+								</header>
+								<a href="images/hikes/precipice-1.jpg" class="image fit">
+									<img src="images/hikes/precipice-1.jpg" alt=""
+										onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot; style=&quot;height:220px;border:1px dashed rgba(128,128,128,.4);display:flex;align-items:center;justify-content:center;font-size:.75em;opacity:.7;&quot;>images/hikes/precipice-1.jpg</div>'" />
+								</a>
+								<p>Iron rungs bolted straight into the cliff face on Acadia's coast.</p>
+								<div class="thumbs">
+									<a href="images/hikes/precipice-2.jpg"><img src="images/hikes/precipice-2.jpg" alt="" onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot;>images/hikes/precipice-2.jpg</div>'" /></a>
+									<a href="images/hikes/precipice-3.jpg"><img src="images/hikes/precipice-3.jpg" alt="" onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot;>images/hikes/precipice-3.jpg</div>'" /></a>
+									<a href="images/hikes/precipice-4.jpg"><img src="images/hikes/precipice-4.jpg" alt="" onerror="this.parentElement.outerHTML='<div class=&quot;placeholder&quot;>images/hikes/precipice-4.jpg</div>'" /></a>
+								</div>
+							</article>
 
-  /* ---------- lightbox ---------- */
-  .lightbox{
-    position: fixed; inset:0; z-index: 100;
-    background: rgba(10,15,10,0.94);
-    display:none; align-items:center; justify-content:center;
-    padding: 40px;
-  }
-  .lightbox.is-open{ display:flex; }
-  .lightbox img{ max-width: 92vw; max-height: 82vh; object-fit:contain; border-radius: 2px; }
-  .lightbox .cap{
-    position:absolute; bottom: 28px; left:0; right:0; text-align:center;
-    font-family: var(--mono); font-size: 12px; color: var(--text-muted); letter-spacing:0.05em;
-  }
-  .lightbox button{
-    position:absolute; background: transparent; border:1px solid var(--line);
-    color: var(--text); width:44px; height:44px; border-radius:50%;
-    font-size: 18px; cursor:pointer; display:flex; align-items:center; justify-content:center;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .lightbox button:hover{ border-color: var(--gold); color: var(--gold); }
-  .lightbox .close{ top: 24px; right: 24px; }
-  .lightbox .prev{ left: 24px; top:50%; transform: translateY(-50%); }
-  .lightbox .next{ right: 24px; top:50%; transform: translateY(-50%); }
+						</section>
 
-  /* ---------- footer ---------- */
-  footer{
-    position: relative;
-    padding: 70px clamp(20px,5vw,56px) 40px;
-    text-align:center;
-    border-top: 1px solid var(--line);
-    overflow:hidden;
-  }
-  footer .content{ position:relative; z-index:1; }
-  footer p{ color: var(--text-muted); font-size: 14px; margin: 0 0 6px; }
-  footer .mono{ font-family: var(--mono); font-size: 11px; color: var(--gold-dim); letter-spacing: 0.1em; }
+					</div>
 
-  @media (max-width: 620px){
-    .trail{ padding-left: 36px; }
-    .blaze{ left: -36px; width:20px; height:13px; }
-    .lightbox .prev, .lightbox .next{ width:38px; height:38px; }
-  }
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:etubiodaudu@gmail.com">etubiodaudu [at] gmail [dot] com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://x.com/odaudu_etubi" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.facebook.com/OdauduEtubi" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/etubiodaudu/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://www.linkedin.com/in/odauduetubi/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/odauduetubi" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
 
-  :focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    *{ transition-duration: 0.01ms !important; }
-  }
-</style>
-</head>
-<body>
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
 
-<div class="topbar">
-  <a class="mark" href="#top">Odaudu Etubi</a>
-  <div class="stats" id="topbarStats"></div>
-</div>
+			</div>
 
-<header class="hero" id="top">
-  <img class="hero-photo" src="images/hero.jpg" alt="" onerror="this.classList.add('is-missing')">
-  <div class="hero-inner">
-    <p class="eyebrow">Trail Log &nbsp;·&nbsp; Est. 2026</p>
-    <h1>Every Summit,<br>Every Step</h1>
-    <p>A running record of the trails I've walked — the climbs, the switchbacks, the views that made the blisters worth it.</p>
-    <div class="scroll-cue"><span class="stem"></span> Scroll the trail</div>
-  </div>
-</header>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-<section class="trail-section">
-  <h2>The Log</h2>
-  <p class="sub">Hikes in order, oldest to newest. Each gold blaze marks one trail — follow it down.</p>
-
-  <div class="trail" id="trail">
-    <div class="trail-fill" id="trailFill"></div>
-    <!-- waypoints are rendered by JS from the hikes[] array below -->
-  </div>
-</section>
-
-<footer>
-  <div class="topo"></div>
-  <div class="content">
-    <p class="mono">— END OF LOG —</p>
-    <p>Odaudu Etubi · odauduetubi.github.io</p>
-  </div>
-</footer>
-
-<div class="lightbox" id="lightbox">
-  <button class="close" id="lbClose" aria-label="Close">✕</button>
-  <button class="prev" id="lbPrev" aria-label="Previous photo">‹</button>
-  <img id="lbImg" src="" alt="">
-  <button class="next" id="lbNext" aria-label="Next photo">›</button>
-  <div class="cap" id="lbCap"></div>
-</div>
-
-<script>
-/* =====================================================================
-   HOW TO ADD YOUR OWN PHOTOS (read this — it matters for GitHub Pages)
-   =====================================================================
-   GitHub Pages only serves files that exist in your repo. There's no
-   server behind it, so visitors can't "upload" photos through this
-   page — but YOU can, in two steps:
-
-   1. In your repo, create a folder named "images" next to this file,
-      and drop your photo files into it (e.g. images/gannett-1.jpg).
-
-   2. Add or edit an entry below in the `hikes` array so the filename
-      matches exactly what you uploaded. Commit + push, and it appears
-      on the live site automatically — no build step needed.
-
-   Until a photo file exists, its tile shows a dashed placeholder with
-   the expected filename, so you always know what's missing.
-   ===================================================================== */
-
-const hikes = [
-  {
-    name: "Gannett Peak",
-    date: "June 2026",
-    distance: "22 mi",
-    elevation: "+8,700 ft",
-    note: "Three days in the Wind River Range. Glacier travel on the final push to the summit.",
-    photos: [
-      { file: "gannett-1.jpg", caption: "Trailhead, first light" },
-      { file: "gannett-2.jpg", caption: "Titcomb Basin" },
-      { file: "gannett-3.jpg", caption: "Glacier crossing" },
-      { file: "gannett-4.jpg", caption: "Summit ridge" }
-    ]
-  },
-  {
-    name: "Angels Landing",
-    date: "March 2026",
-    distance: "5.4 mi",
-    elevation: "+1,600 ft",
-    note: "Chains, sandstone, and a drop-off I tried not to look at too long.",
-    photos: [
-      { file: "angels-1.jpg", caption: "The chains section" },
-      { file: "angels-2.jpg", caption: "Zion Canyon from above" },
-      { file: "angels-3.jpg", caption: "Walter's Wiggles" }
-    ]
-  },
-  {
-    name: "Precipice Trail",
-    date: "October 2025",
-    distance: "3.2 mi",
-    elevation: "+1,000 ft",
-    note: "Iron rungs bolted straight into the cliff face on Acadia's coast.",
-    photos: [
-      { file: "precipice-1.jpg", caption: "Iron rungs" },
-      { file: "precipice-2.jpg", caption: "Frenchman Bay" },
-      { file: "precipice-3.jpg", caption: "Champlain Mountain summit" },
-      { file: "precipice-4.jpg", caption: "Fall color on the descent" }
-    ]
-  }
-];
-
-// ---------- render ----------
-const trailEl = document.getElementById('trail');
-const trailFill = document.getElementById('trailFill');
-let flatPhotos = []; // for the lightbox, in document order
-
-hikes.forEach((hike, hIdx) => {
-  const wp = document.createElement('div');
-  wp.className = 'waypoint';
-  wp.id = 'hike-' + hIdx;
-
-  const blaze = document.createElement('div');
-  blaze.className = 'blaze';
-  wp.appendChild(blaze);
-
-  const plate = document.createElement('div');
-  plate.className = 'plate';
-  plate.innerHTML = `
-    <h3>${hike.name}</h3>
-    <div class="meta">
-      <span><b>${hike.date}</b></span>
-      <span>${hike.distance}</span>
-      <span>${hike.elevation}</span>
-    </div>`;
-  wp.appendChild(plate);
-
-  if (hike.note) {
-    const note = document.createElement('p');
-    note.className = 'note';
-    note.textContent = hike.note;
-    wp.appendChild(note);
-  }
-
-  const grid = document.createElement('div');
-  grid.className = 'photo-grid';
-
-  hike.photos.forEach(photo => {
-    const idx = flatPhotos.length;
-    flatPhotos.push({ ...photo, hike: hike.name });
-
-    const a = document.createElement('a');
-    a.href = '#';
-    a.setAttribute('data-idx', idx);
-    a.setAttribute('aria-label', 'Open photo: ' + photo.caption);
-
-    const img = document.createElement('img');
-    img.src = 'images/' + photo.file;
-    img.alt = photo.caption;
-    img.loading = 'lazy';
-    img.onerror = function () {
-      this.style.display = 'none';
-      const ph = document.createElement('div');
-      ph.className = 'placeholder';
-      ph.innerHTML = `<span class="plus">+</span><span class="fname">images/${photo.file}</span>`;
-      a.appendChild(ph);
-      a.removeAttribute('data-idx'); // don't open lightbox on a missing photo
-    };
-
-    a.appendChild(img);
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (a.hasAttribute('data-idx')) openLightbox(idx);
-    });
-    grid.appendChild(a);
-  });
-
-  wp.appendChild(grid);
-  trailEl.appendChild(wp);
-});
-
-// ---------- topbar stats ----------
-const totalPhotos = flatPhotos.length;
-document.getElementById('topbarStats').innerHTML =
-  `<span><b>${hikes.length}</b> trails</span><span><b>${totalPhotos}</b> photos</span>`;
-
-// ---------- trail fill + active blaze on scroll ----------
-const waypoints = Array.from(document.querySelectorAll('.waypoint'));
-function updateTrail() {
-  const rect = trailEl.getBoundingClientRect();
-  const vh = window.innerHeight;
-  const total = trailEl.offsetHeight;
-  const scrolled = Math.min(Math.max(vh * 0.6 - rect.top, 0), total);
-  trailFill.style.height = (scrolled / total * 100) + '%';
-
-  waypoints.forEach(wp => {
-    const r = wp.getBoundingClientRect();
-    wp.classList.toggle('is-active', r.top < vh * 0.6 && r.bottom > vh * 0.15);
-  });
-}
-document.addEventListener('scroll', updateTrail, { passive: true });
-window.addEventListener('resize', updateTrail);
-updateTrail();
-
-// ---------- lightbox ----------
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lbImg');
-const lbCap = document.getElementById('lbCap');
-let currentIdx = 0;
-
-function openLightbox(idx) {
-  currentIdx = idx;
-  renderLightbox();
-  lb.classList.add('is-open');
-}
-function renderLightbox() {
-  const p = flatPhotos[currentIdx];
-  lbImg.src = 'images/' + p.file;
-  lbImg.alt = p.caption;
-  lbCap.textContent = `${p.hike} — ${p.caption}`;
-}
-function closeLightbox() { lb.classList.remove('is-open'); }
-function step(dir) {
-  currentIdx = (currentIdx + dir + flatPhotos.length) % flatPhotos.length;
-  renderLightbox();
-}
-document.getElementById('lbClose').addEventListener('click', closeLightbox);
-document.getElementById('lbPrev').addEventListener('click', () => step(-1));
-document.getElementById('lbNext').addEventListener('click', () => step(1));
-lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
-document.addEventListener('keydown', (e) => {
-  if (!lb.classList.contains('is-open')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') step(-1);
-  if (e.key === 'ArrowRight') step(1);
-});
-</script>
-</body>
+	</body>
 </html>
